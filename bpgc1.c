@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <math.h>
 
-void pattern(char c, int x);
+void pattern(char c, int x); // will print pattern
 
-int totdig(int x);
+int totdig(int x); // no. of digits in the given input
 
-int digit(int x, int i);
+int digit(int x, int i); // gives ith digit of the input number, i = 1, 2, 3, ...
 
-char form(int n);
+char form(int n); // helper function, see definition for clear idea.
 
 int main(void)
 {
@@ -24,6 +24,7 @@ int main(void)
 
 
 }
+// Function definitions
 
 int totdig(int x)
 {
@@ -68,14 +69,16 @@ char form(int n)
 void pattern(char c, int x)
 {
     int n = totdig(x);
-    for (int i = n; i > 0; i--)
+    // inner loop defines a row.
+    // outer loop defines number of rows.
+    for (int i = n; i > 0; i--) // i decrements for every row printed.
     {
         for (int j = n; j > i; j--)
         {
-            printf("%c ", c);
+            printf("%c ", c); // each row has the character before the actual digit.
         }
 
-        printf("%d\n", digit(x, i));
+        printf("%d\n", digit(x, i)); // prints digit at the end of each line of characters.
     }
 
 }
