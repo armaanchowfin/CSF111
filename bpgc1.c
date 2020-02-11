@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <cs50.h>
 #include <math.h>
 
 void pattern(char c, int x);
@@ -14,7 +13,8 @@ int main(void)
 {
     char c;
 
-    int x = get_int("Input: ");
+    printf("Input: ");
+    scanf("%d", &x);
 
     int n = totdig(x);
 
